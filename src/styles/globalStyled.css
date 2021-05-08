@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body, #root {
+    max-height: 100vh;
+    max-width: 100vw;
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    background:  var(--primary);
+}
+
+:root {
+    --primary: #282C30;
+    --button: #7AC64F;
+    --buttonDark:  #468a1fde;
+    --search: #E6E6E7;
+    --graphite: #323232;
+    --white: #F7F7F7;
+    --title: #F5F5F5; 
+    --border: #7E7E8B;
+    --gray: #7E7E8B;
+}
+
