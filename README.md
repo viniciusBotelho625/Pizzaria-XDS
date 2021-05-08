@@ -1,70 +1,52 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center"> 
+  <img src="https://github.com/viniciusBotelho625/Pizzaria-XDS/blob/main/img_README/logo.png" width="180">
+</p>
+<hr>
+<h3 align="center"></h3>
+<p align="center"> 
+  <img src="https://github.com/viniciusBotelho625/Pizzaria-XDS/blob/main/img_README/9wH.gif" width="500">
+</p>
 
-## Available Scripts
+<h3>Tecnologias 💻</h3>
+<p>O projeto foi desenvolvido com o framework JavaScript React.JS, onde foi possivel implantar o uso da biblioteca Styled Components</p>
+<ul>
+  <li>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png" width="30">
+    <a href="https://pt-br.reactjs.org/">React.JS</a>
+  </li>
+</ul>
+<h3>Sobre o projeto 🚀</h3>
+<p>O XDS é um desafio Front-end que tem como base utiliziar o framework React.JS para sua construção. O objetivo é construir um site de Pizzaria, onde você pode selecionar de forma rápida e prática o seu pedido no conforto de sua residência.</p>
+<br></br>
+<p align="center"> 
+  <img src="https://github.com/viniciusBotelho625/Pizzaria-XDS/blob/main/img_README/Login.png" width="49%">
+  <img src="https://github.com/viniciusBotelho625/Pizzaria-XDS/blob/main/img_README/List.png" width="49%">
+  <img src="https://github.com/viniciusBotelho625/Pizzaria-XDS/blob/main/img_README/Detail.png" width="49%">
+  <img src="https://github.com/viniciusBotelho625/Pizzaria-XDS/blob/main/img_README/Success.png" width="49%">
+</p>
+<h3>Como contribuir 😎</h3>
+<ul>
+  <li>Faça um fork desse repositório;</li>
+  <li>Cria uma branch com a sua feature: git checkout -b minha-feature;</li> 
+  <li>Faça commit das suas alterações: git commit -m 'feat: Minha nova feature';</li>
+  <li>Faça push para a sua branch: git push origin minha-feature.</li>
+  <li>Depois que o merge da sua pull request for feito, você pode deletar a sua branch.</li>
+</ul>
+<h3>Para rodar a aplicação 🔄</h3>
+<ul>
+  <p>OBS: pode-se utilizar o gerenciador de pacotes npm ou o yarn para rodar os comandos abaixo</p>
+  <li>Execute npm install para instalar as dependências.</li>
+  <li>Rode yarn dev para utilizar a versão web. Acesse via localhost:3000.</li>   
+</ul>
 
-In the project directory, you can run:
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
