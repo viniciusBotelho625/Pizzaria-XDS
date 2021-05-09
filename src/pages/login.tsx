@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import styles from '../styles/pages/Logon.module.css';
+import styles from '../styles/pages/Login.module.css';
 
 import logoImg from '../assets/logo.png';
 
