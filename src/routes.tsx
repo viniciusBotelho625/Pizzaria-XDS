@@ -7,8 +7,8 @@ import Logon from './pages/login';
 function Routes() {
     return(
         <BrowserRouter>
-            <Route path="/" exact component={Logon}/>
-            <Route path="/menu" exact component={List}/>
+            <Route path="/menu" component={Logon}/>
+            <Route path="/" exact component={List}/>
         </BrowserRouter>
     );
 }

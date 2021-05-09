@@ -1,7 +1,9 @@
 import React from 'react';
-import styles from '../../styles/pages/Logon.module.css';
+import { Link } from 'react-router-dom';
 
-import logoImg from '../../assets/logo.png';
+import styles from '../styles/pages/Logon.module.css';
+
+import logoImg from '../assets/logo.png';
 
 export default function Logon(){
     return (
@@ -15,7 +17,9 @@ export default function Logon(){
                     <input type="text" name="user" placeholder="usuário"/>
                     <input type="text" name="password" placeholder="senha"/>
 
-                    <button type="submit" className="button">Entrar</button>
+                    <button type="submit" className={styles.button}>
+                        Entrar
+                    </button>
                 </div>
             </div>
         </div>

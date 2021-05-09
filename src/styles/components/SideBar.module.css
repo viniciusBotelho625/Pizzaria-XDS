@@ -1,0 +1,23 @@
+.sideBar {
+    width: 100%;
+    background-color: var(--graphite);
+    display: flex;
+    justify-content: space-between;
+    height: 4.12rem;
+    align-items: center;
+    margin: 0;
+    padding: 0.11rem 0 0.11rem 1.62rem;
+}
+
+.sideBar figure img {
+    width: 88px;
+}
+
+.searchInput {
+    width: 21.43rem;
+    height: 2.5rem;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--search);
+    margin: 0.81rem 1.15rem 0.81rem 0px;
+}
