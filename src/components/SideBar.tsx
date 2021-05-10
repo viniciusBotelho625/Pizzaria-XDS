@@ -5,6 +5,7 @@ import logoImg from '../assets/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
+
 export function SideBar() {
     return (
         <div className={styles.sideBar}>
@@ -20,3 +21,4 @@ export function SideBar() {
         </div>
     );
 }
+
