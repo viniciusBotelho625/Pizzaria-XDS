@@ -1,27 +1,62 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { FormEvent, useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import  api  from '../services/api';
 
 import styles from '../styles/pages/Login.module.css';
 
 import logoImg from '../assets/logo.png';
 
 export default function Logon(){
+    const history = useHistory();
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    async function handleLogin (e: FormEvent) {
+        e.preventDefault();
+
+        try {
+            const response = await api.post('https://p3teufi0k9.execute-api.us-east-1.amazonaws.com/v1/signin', {
+                email,
+                password
+            }).then(() => {
+                alert('Deu Certo');
+                history.push('/list')
+            })
+        } catch (err) {
+            alert('Erro de autenticação!')
+        }
+    } 
+
     return (
         <div className={styles.container}>
-            <div className={styles.cardLogon}>
-                <header>
-                    <img src={logoImg} alt="Logo da empresa" />
-                </header>
-                <div className={styles.cardBody}>
-                    <strong>Entrar</strong>
-                    <input type="text" name="user" placeholder="usuário"/>
-                    <input type="text" name="password" placeholder="senha"/>
-
-                    <button type="submit" className={styles.button}>
-                        Entrar
-                    </button>
+            <form onSubmit={handleLogin}>
+                <div className={styles.cardLogon}>
+                    <header>
+                        <img src={logoImg} alt="Logo da empresa" />
+                    </header>
+                    <div className={styles.cardBody}>
+                        <strong>Entrar</strong>
+                        <input 
+                            name="email"
+                            type="email"
+                            placeholder="usuário"
+                            value={email} 
+                            onChange={e => setEmail(e.target.value)}
+                        />
+                        <input 
+                            name="password" 
+                            type="password"
+                            placeholder="senha"
+                            value={password}
+                            onChange={e => setPassword(e.target.value)}
+                        />
+                        <button type="submit" className={styles.button}>
+                            Entrar
+                        </button>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
     );
 }
