@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../styles/components/CardDetail.module.css';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
@@ -9,11 +10,13 @@ export function CardDetail() {
     return(
         <div className={styles.cardDetail}>
             <div className={styles.cardDetailImage}>
-                <button type="button">
-                    <span>
-                        <FontAwesomeIcon icon={faArrowLeft} />
-                    </span>
-                </button>
+                <Link to="/list">
+                    <button type="button">
+                        <span>
+                            <FontAwesomeIcon icon={faArrowLeft} />
+                        </span>
+                    </button>
+                </Link>    
                 <figure>
                     <img src={pizzaImg} alt="Imagem do pedido"/>
                 </figure>
@@ -50,7 +53,9 @@ export function CardDetail() {
                 <div className={styles.orderPrice}>
                     <p>R$ 29,99</p>
                 </div>
-                <button type="submit" className={styles.buttonPay}>Comprar</button>
+                <Link to="/success">
+                    <button type="submit" className={styles.buttonPay}>Comprar</button>
+                </Link>
             </div>
         </div>
     );
