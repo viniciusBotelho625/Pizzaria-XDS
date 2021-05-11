@@ -40,3 +40,13 @@
      background: var(--buttonDark);
      transition: 0.6s;
 }
+
+
+@media(max-width: 600px) {
+    .cardSuccess {
+        background-color: var(--primary);
+        margin-top: 50px;
+        box-shadow: none;
+        width: 100%;
+    }
+}

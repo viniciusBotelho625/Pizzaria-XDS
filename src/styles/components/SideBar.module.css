@@ -18,5 +18,15 @@
     .sideBar figure img {
         display: none;
     }
+
+    .sideBar {
+        display: none;
+    }
+}
+
+@media(max-width: 1024px) {
+    .sideBar {
+        width: 100%;
+    }
 }
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
+
 import  {SideBar}  from '../components/SideBar';
 import { InputSearch } from '../components/InputSearch';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -13,13 +14,9 @@ import { useHistory } from 'react-router';
 
 export default function List() {
 
-    const [pizzas, setPizzas] = useState([]);
+    const [pizzas, setPizzas] = useState<any[]>([]);
 
     // const history = useHistory(); 
-
-    console.log({
-        pizzas
-    })
 
     useEffect(() => {
         api.get('https://p3teufi0k9.execute-api.us-east-1.amazonaws.com/v1/pizza', {
@@ -63,7 +60,7 @@ export default function List() {
                         </div>
                         <div className={styles.cardFooter}>
                             <p>a partir de:</p>
-                            <p>{pizza.priceP}</p>
+                            <p>{Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(pizza.priceP)}</p>
                         </div>
                     </div>
                 ))}
