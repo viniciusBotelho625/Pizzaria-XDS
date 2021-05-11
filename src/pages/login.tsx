@@ -14,16 +14,14 @@ export default function Logon(){
 
     async function handleLogin (e: FormEvent) {
         e.preventDefault();
+       
         try {
-            const response = await api.post('https://p3teufi0k9.execute-api.us-east-1.amazonaws.com/v1/signin', {
+            await api.post('https://p3teufi0k9.execute-api.us-east-1.amazonaws.com/v1/signin', {
                 email,
                 password
-            });
-
-            localStorage.setItem('email', email);
-            localStorage.setItem('password', password);
+        }).then(() => {
             history.push('/list')
-            
+        })
         } catch (err) {
             alert("Erro de autenticação")
         }

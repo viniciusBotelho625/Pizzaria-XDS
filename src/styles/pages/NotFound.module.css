@@ -1,0 +1,12 @@
+.imgError{
+    text-align: center;
+    margin: 2rem 0rem 2rem 0rem;
+}
+.imgError img {
+    width: 50rem;
+}
+
+.title {
+    text-align: center;
+    font-size: 1.2rem;
+}
