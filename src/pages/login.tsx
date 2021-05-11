@@ -1,10 +1,10 @@
 import React, { FormEvent, useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import  api  from '../services/api';
+import { useHistory } from 'react-router-dom';
 
 import styles from '../styles/pages/Login.module.css';
-
 import logoImg from '../assets/logo.png';
+
+import  api  from '../services/api';
 
 export default function Logon(){
     const history = useHistory();
@@ -14,17 +14,18 @@ export default function Logon(){
 
     async function handleLogin (e: FormEvent) {
         e.preventDefault();
-
         try {
             const response = await api.post('https://p3teufi0k9.execute-api.us-east-1.amazonaws.com/v1/signin', {
                 email,
                 password
-            }).then(() => {
-                alert('Deu Certo');
-                history.push('/list')
-            })
+            });
+
+            localStorage.setItem('email', email);
+            localStorage.setItem('password', password);
+            history.push('/list')
+            
         } catch (err) {
-            alert('Erro de autenticação!')
+            alert("Erro de autenticação")
         }
     } 
 
@@ -51,7 +52,7 @@ export default function Logon(){
                             value={password}
                             onChange={e => setPassword(e.target.value)}
                         />
-                        <button type="submit" className={styles.button}>
+                        <button type="submit" className={styles.button}> 
                             Entrar
                         </button>
                     </div>
