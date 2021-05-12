@@ -14,32 +14,24 @@ export default function Logon(){
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const [ authToken, setAuthToken] = useContext(AuthContext)
-
+    const { authToken, setAuthToken }= useContext(AuthContext);
+    
     async function handleLogin (e: FormEvent) {
         e.preventDefault();
-
         
-        if( email && password) {
-            const authToken = 'ksankjdsad';
-            setAuthToken(authToken);
-            Cookies.set('token', authToken);
-        }
-
-        if (authToken) return <Redirect to="/" />
-       
         try {
             await api.post('https://p3teufi0k9.execute-api.us-east-1.amazonaws.com/v1/signin', {
                 email,
                 password
         }).then(resp => {
-            const { accessToken } = resp.data;
-            Cookies.set("access", accessToken);
+            setAuthToken(authToken);
+            Cookies.set('token', authToken);
             history.push('/list')
         })
         } catch (err) {
             alert("Erro de autenticação")
         }
+        if (authToken) return <Redirect to="/" />
     } 
 
     return (

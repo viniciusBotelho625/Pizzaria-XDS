@@ -9,7 +9,7 @@ const ProtectedRoutes = ({children, path, component}) => {
     if(!authToken) return <Redirect to="/" />
     
     return (
-        <Route path={path} component>
+        <Route path={path}>
             {children}
         </Route>
     )

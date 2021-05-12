@@ -16,8 +16,8 @@ export const AuthProvider = ({children}) => {
         <AuthContext.Provider value={{authToken, setAuthToken}}>
             {children}
         </AuthContext.Provider>
-    )
-}
+    );
+};
 
 export default AuthContext;
 

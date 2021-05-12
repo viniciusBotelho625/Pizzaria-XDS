@@ -16,9 +16,9 @@ const Routes = () => (
         <Switch>
             <Route path="/" exact component={Logon}/>
             <ProtectedRoutes path="/list" component={List}></ProtectedRoutes>
-            <ProtectedRoutes path="/detail" component={Detail}/>
-            <ProtectedRoutes path="/success" component={Success}/>
-            <ProtectedRoutes path="*" component={NotFound}/>
+            <ProtectedRoutes path="/detail" component={Detail}></ProtectedRoutes>
+            <ProtectedRoutes path="/success" component={Success}></ProtectedRoutes>
+            <ProtectedRoutes path="*" component={NotFound}></ProtectedRoutes>
         </Switch>
     </BrowserRouter>
     </AuthProvider>
