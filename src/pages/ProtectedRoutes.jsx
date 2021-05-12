@@ -2,9 +2,9 @@ import React, { useContext } from 'react'
 import { Redirect, Route } from 'react-router';
 import AuthContext from '../context/AuthContext';
 
-const ProtectedRoutes = ({children, path, component, authToken}) => {
+const ProtectedRoutes = ({children, path, component}) => {
 
-    const {authToken} = useContext()
+    const {authToken} = useContext(AuthContext)
 
     if(!authToken) return <Redirect to="/" />
     

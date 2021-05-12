@@ -1,20 +1,32 @@
-import React, { FormEvent, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { FormEvent, useState, useContext } from 'react';
+import { Redirect, useHistory } from 'react-router-dom';
 import Cookies from 'js-cookie';
 
 import styles from '../styles/pages/Login.module.css';
 import logoImg from '../assets/logo.png';
 import  api  from '../services/api';
 
+import AuthContext from '../context/AuthContext';
+
 export default function Logon(){
-    const [auth, setAuth] = React.useState(false)
     const history = useHistory();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    const [ authToken, setAuthToken] = useContext(AuthContext)
+
     async function handleLogin (e: FormEvent) {
         e.preventDefault();
+
+        
+        if( email && password) {
+            const authToken = 'ksankjdsad';
+            setAuthToken(authToken);
+            Cookies.set('token', authToken);
+        }
+
+        if (authToken) return <Redirect to="/" />
        
         try {
             await api.post('https://p3teufi0k9.execute-api.us-east-1.amazonaws.com/v1/signin', {
