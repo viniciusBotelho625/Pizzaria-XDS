@@ -1,12 +1,13 @@
 import React, { FormEvent, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
 import styles from '../styles/pages/Login.module.css';
 import logoImg from '../assets/logo.png';
-
 import  api  from '../services/api';
 
 export default function Logon(){
+    const [auth, setAuth] = React.useState(false)
     const history = useHistory();
 
     const [email, setEmail] = useState('');
@@ -19,7 +20,9 @@ export default function Logon(){
             await api.post('https://p3teufi0k9.execute-api.us-east-1.amazonaws.com/v1/signin', {
                 email,
                 password
-        }).then(() => {
+        }).then(resp => {
+            const { accessToken } = resp.data;
+            Cookies.set("access", accessToken);
             history.push('/list')
         })
         } catch (err) {
