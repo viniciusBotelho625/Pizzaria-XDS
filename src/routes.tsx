@@ -8,18 +8,22 @@ import Logon from './pages/login';
 import Detail from './pages/detail';
 import Success from './pages/success';
 import NotFound from './pages/notFound';
+import ProtectedRoutes from './pages/ProtectedRoutes';
+import { AuthProvider} from '../src/context/AuthContext';
 
 
 const Routes = () => (
+    <AuthProvider>
     <BrowserRouter>
         <Switch>
             <Route path="/" exact component={Logon}/>
-            <Route path="/list" component={List}/>
-            <Route path="/detail" component={Detail}/>
-            <Route path="/success" component={Success}/>
-            <Route path="*" component={NotFound}/>
+            <ProtectedRoutes path="/list" component={List}></ProtectedRoutes>
+            <ProtectedRoutes path="/detail" component={Detail}/>
+            <ProtectedRoutes path="/success" component={Success}/>
+            <ProtectedRoutes path="*" component={NotFound}/>
         </Switch>
     </BrowserRouter>
+    </AuthProvider>
 );
 
 
