@@ -20,8 +20,8 @@ export default function List() {
     const history = useHistory();
 
     const [pizzas, setPizzas] = useState<any[]>([]);
-
-    // const history = useHistory(); 
+    
+    const renderStar = [1, 2, 3, 4, 5]
 
     function navigateToDetail(pizza: any) {
         Cookies.set('pizza', JSON.stringify(pizza))
@@ -52,21 +52,21 @@ export default function List() {
                         </div>
                         <div className={styles.cardBody}>
                             <p>{pizza.name}</p>
-                            <span>
-                                <FontAwesomeIcon icon={faStar}/>
-                            </span>
-                            <span>
-                                <FontAwesomeIcon icon={faStar}/>
-                            </span>
-                            <span>
-                                <FontAwesomeIcon icon={faStar}/>
-                            </span>
-                            <span>
-                                <FontAwesomeIcon icon={faStar}/>
-                            </span>
-                            <span>
-                                <FontAwesomeIcon icon={faStar}/>
-                            </span>       
+                            {renderStar.map((i) => {
+                                if(i <= pizza.rating) {
+                                    return (
+                                        <span  className={'active'}>
+                                            <FontAwesomeIcon icon={faStar}/>
+                                        </span>
+                                    ) 
+                                } else {
+                                    return (
+                                        <span>
+                                            <FontAwesomeIcon icon={faStar}/>
+                                        </span>
+                                    )
+                                }
+                            })}      
                         </div>
                         <div className={styles.cardFooter}>
                             <p>a partir de:</p>

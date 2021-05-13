@@ -66,13 +66,9 @@ p {
     cursor: pointer;
 }
 
-.cardDetailInformation .cardDetailAvaliation span:hover {
-    color: gold;
+.cardDetailInformation .cardDetailAvaliation span[class=active] {
+    color: gold !important;
 }
-
-.cardDetailInformation .cardDetailAvaliation span:nth-child(-n+4) {
-    color: gold;
-} 
 
 .cardDetailInformation .description {
     font-weight: 400;
@@ -104,9 +100,9 @@ p {
 }
 
 .cardDetailInformation .orderOptionsSize button:hover, .selected {
-    background-color: var(--green);
-    transition: 0.3s;
-    color: var(--white)
+    background-color: var(--green) !important;
+    transition: 0.3s; 
+    color: var(--white) !important;
 }
 
 .cardDetailInformation .orderPrice {

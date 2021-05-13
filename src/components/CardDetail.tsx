@@ -22,6 +22,8 @@ export function CardDetail() {
         setPizzaSize(size) 
     }
 
+    const renderStar = [1, 2, 3, 4, 5]
+    
     return(
         <div className={styles.cardDetail}>
             <div className={styles.cardDetailImage}>
@@ -39,21 +41,22 @@ export function CardDetail() {
             <div className={styles.cardDetailInformation}>
                 <div className={styles.cardDetailAvaliation}>
                     <p className={styles.title}>{pizza.name}</p>
-                    <span>
-                        <FontAwesomeIcon icon={faStar}/>
-                    </span>
-                    <span>
-                        <FontAwesomeIcon icon={faStar}/>
-                    </span>
-                    <span>
-                        <FontAwesomeIcon icon={faStar}/>
-                    </span>
-                    <span>
-                        <FontAwesomeIcon icon={faStar}/>
-                    </span>
-                    <span>
-                        <FontAwesomeIcon icon={faStar}/>
-                    </span> 
+                    {renderStar.map((i) => {
+                        console.log(i <= pizza.rating, i, pizza.rating)
+                        if(i <= pizza.rating) {
+                            return (
+                                <span  className={'active'}>
+                                    <FontAwesomeIcon icon={faStar}/>
+                                </span>
+                            ) 
+                        } else {
+                            return (
+                                <span>
+                                    <FontAwesomeIcon icon={faStar}/>
+                                </span>
+                            )
+                        }
+                    })}
                 </div>
                 <p className={styles.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                 Fusce faucibus commodo orci at aliquet. Nulla nec nisi rhoncus.</p>  

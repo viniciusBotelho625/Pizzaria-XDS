@@ -60,11 +60,7 @@ section {
     color: var(--gray);
 }
 
-.cardBody span:active, span:hover {
-    color: gold;
-}
-
-.cardBody span:nth-child(-n+4) {
+.cardBody span:active, span[class=active]{
     color: gold;
 }
 
