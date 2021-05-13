@@ -1,30 +1,40 @@
 import React, { useEffect, useState } from 'react';
 
 
+
 import  {SideBar}  from '../components/SideBar';
 import { InputSearch } from '../components/InputSearch';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import pizzaImg from '../assets/pizza.jpg';
 
+
 import styles from '../styles/pages/List.module.css';
 import api from '../services/api';
 
 import { useHistory } from 'react-router';
+import Cookies from 'js-cookie';
+
 
 export default function List() {
+    const history = useHistory();
 
     const [pizzas, setPizzas] = useState<any[]>([]);
 
     // const history = useHistory(); 
 
+    function navigateToDetail(pizza: any) {
+        Cookies.set('pizza', JSON.stringify(pizza))
+        history.push('/detail')
+    }
+
     useEffect(() => {
         api.get('https://p3teufi0k9.execute-api.us-east-1.amazonaws.com/v1/pizza', {
-
         }).then(response => {
             setPizzas(response.data)
+            console.log(response)
         })
-    })
+    },[])
     
     return(
         <>
@@ -34,7 +44,7 @@ export default function List() {
             <p className={styles.title}>Escolha seu Sabor</p>
             <section>
                 {pizzas.map(pizza => (
-                    <div className={styles.cardMenu}>
+                    <div className={styles.cardMenu} onClick={() => navigateToDetail(pizza)}>
                         <div className={styles.cardHeader}>
                             <figure>
                                 <img src={pizza.imageUrl} alt="Imagem ilustrativa da Pizza"/>

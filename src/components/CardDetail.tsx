@@ -1,12 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from '../styles/components/CardDetail.module.css';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import pizzaImg from '../assets/pizza.jpg';
+import Cookies from 'js-cookie';
 
 export function CardDetail() {
+    
+    const [pizzaSize, setPizzaSize] = useState('P'); 
+
+    const pizza = JSON.parse(Cookies.get('pizza')!)
+    
+    const currencyFormat = Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'})
+
+    function changeSize(size: string) {
+        setPizzaSize(size) 
+    }
+
     return(
         <div className={styles.cardDetail}>
             <div className={styles.cardDetailImage}>
@@ -18,12 +30,12 @@ export function CardDetail() {
                     </button>
                 </Link>    
                 <figure>
-                    <img src={pizzaImg} alt="Imagem do pedido"/>
+                    <img src={pizza.imageUrl} alt="Imagem do pedido"/>
                 </figure>
             </div>
             <div className={styles.cardDetailInformation}>
                 <div className={styles.cardDetailAvaliation}>
-                    <p className={styles.title}>Pizza de Peperoni</p>
+                    <p className={styles.title}>{pizza.name}</p>
                     <span>
                         <FontAwesomeIcon icon={faStar}/>
                     </span>
@@ -45,13 +57,13 @@ export function CardDetail() {
                 <div className={styles.order}>
                     <p>Escolha o tamanho</p>
                     <div className={styles.orderOptionsSize}>
-                        <button type="button">P</button>
-                        <button type="button">M</button>
-                        <button type="button">G</button>
+                        <button type="button" onClick={() => changeSize('P')}>P</button>
+                        <button type="button" onClick={() => changeSize('M')}>M</button>
+                        <button type="button" onClick={() => changeSize('G')}>G</button>
                     </div>
                 </div>
                 <div className={styles.orderPrice}>
-                    <p>R$ 29,99</p>
+                    <p>{currencyFormat.format(pizza[`price${pizzaSize}`])}</p>
                 </div>
                 <Link to="/success">
                     <button type="submit" className={styles.buttonPay}>Comprar</button>

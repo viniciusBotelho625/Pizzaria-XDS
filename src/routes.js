@@ -6,22 +6,22 @@ import Logon from './pages/login';
 import Detail from './pages/detail';
 import Success from './pages/success';
 import NotFound from './pages/notFound';
-import ProtectedRoutes from './pages/ProtectedRoutes';
-import { AuthProvider} from './context/AuthContext';
+// import ProtectedRoutes from './pages/ProtectedRoutes';
+// import { AuthProvider} from './context/AuthContext';
 
 
 const Routes = () => (
-    <AuthProvider>
+    // <AuthProvider>
     <BrowserRouter>
         <Switch>
             <Route path="/" exact component={Logon}/>
-            <ProtectedRoutes path="/list" component={List}></ProtectedRoutes>
-            <ProtectedRoutes path="/detail" component={Detail}></ProtectedRoutes>
-            <ProtectedRoutes path="/success" component={Success}></ProtectedRoutes>
-            <ProtectedRoutes path="*" component={NotFound}></ProtectedRoutes>
+            <Route path="/list" component={List}/>
+            <Route path="/detail" component={Detail}/>
+            <Route path="/success" component={Success}/>
+            <Route path="*" component={NotFound}/>
         </Switch>
     </BrowserRouter>
-    </AuthProvider>
+    // {/* </AuthProvider> */}
 );
 
 

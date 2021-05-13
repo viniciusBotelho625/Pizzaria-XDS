@@ -6,7 +6,7 @@ import styles from '../styles/pages/Login.module.css';
 import logoImg from '../assets/logo.png';
 import  api  from '../services/api';
 
-import AuthContext from '../context/AuthContext';
+// import AuthContext from '../context/AuthContext';
 
 export default function Logon(){
     const history = useHistory();
@@ -14,7 +14,7 @@ export default function Logon(){
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const { authToken, setAuthToken }= useContext(AuthContext);
+    // const { authToken, setAuthToken }= useContext(AuthContext);
     
     async function handleLogin (e: FormEvent) {
         e.preventDefault();
@@ -24,14 +24,15 @@ export default function Logon(){
                 email,
                 password
         }).then(resp => {
-            setAuthToken(authToken);
-            Cookies.set('token', authToken);
+            // setAuthToken(authToken);
+            // Cookies.set('token', authToken);
+            console.log(resp)
             history.push('/list')
         })
         } catch (err) {
             alert("Erro de autenticação")
         }
-        if (authToken) return <Redirect to="/" />
+        // if (authToken) return <Redirect to="/" />
     } 
 
     return (
