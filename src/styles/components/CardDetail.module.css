@@ -103,7 +103,7 @@ p {
     cursor: pointer;
 }
 
-.cardDetailInformation .orderOptionsSize button:hover {
+.cardDetailInformation .orderOptionsSize button:hover, .selected {
     background-color: var(--green);
     transition: 0.3s;
     color: var(--white)

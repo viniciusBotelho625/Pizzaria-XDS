@@ -7,9 +7,12 @@ import { faStar } from '@fortawesome/free-solid-svg-icons'
 import pizzaImg from '../assets/pizza.jpg';
 import Cookies from 'js-cookie';
 
+
+
 export function CardDetail() {
+    const sizes = {P: 'P', M: 'M', G: 'G'}
     
-    const [pizzaSize, setPizzaSize] = useState('P'); 
+    const [pizzaSize, setPizzaSize] = useState(sizes.P); 
 
     const pizza = JSON.parse(Cookies.get('pizza')!)
     
@@ -57,9 +60,13 @@ export function CardDetail() {
                 <div className={styles.order}>
                     <p>Escolha o tamanho</p>
                     <div className={styles.orderOptionsSize}>
-                        <button type="button" onClick={() => changeSize('P')}>P</button>
-                        <button type="button" onClick={() => changeSize('M')}>M</button>
-                        <button type="button" onClick={() => changeSize('G')}>G</button>
+                        {Object.values(sizes).map(size => (
+                            <button 
+                                className={(pizzaSize === size) ? 'selected' : '' } 
+                                type="button" onClick={() => changeSize(size)}>
+                                    {size}
+                            </button>
+                        ))}
                     </div>
                 </div>
                 <div className={styles.orderPrice}>
