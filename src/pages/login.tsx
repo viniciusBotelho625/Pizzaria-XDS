@@ -26,7 +26,6 @@ export default function Logon(){
         }).then(resp => {
             // setAuthToken(authToken);
             // Cookies.set('token', authToken);
-            console.log(resp)
             history.push('/list')
         })
         } catch (err) {

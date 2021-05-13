@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
-import pizzaImg from '../assets/pizza.jpg';
 import Cookies from 'js-cookie';
 
 
@@ -20,6 +19,10 @@ export function CardDetail() {
 
     function changeSize(size: string) {
         setPizzaSize(size) 
+    }
+
+    function activeButton(button: any) {
+        button.style.backgroundColor = "green";
     }
 
     const renderStar = [1, 2, 3, 4, 5]
@@ -58,14 +61,12 @@ export function CardDetail() {
                         }
                     })}
                 </div>
-                <p className={styles.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Fusce faucibus commodo orci at aliquet. Nulla nec nisi rhoncus.</p>  
+                <p className={styles.description}>Para ser feliz não tem dia. Para comer pizza também não. Que tal se deliciar com essa pizza de {pizza.name} ?</p>  
                 <div className={styles.order}>
                     <p>Escolha o tamanho</p>
                     <div className={styles.orderOptionsSize}>
                         {Object.values(sizes).map(size => (
-                            <button 
-                                className={(pizzaSize === size) ? 'selected' : '' } 
+                            <button id={(pizzaSize === size) ? 'teste' : '' } 
                                 type="button" onClick={() => changeSize(size)}>
                                     {size}
                             </button>

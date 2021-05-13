@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
 
-
 import  {SideBar}  from '../components/SideBar';
 import { InputSearch } from '../components/InputSearch';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
-import pizzaImg from '../assets/pizza.jpg';
 
 
 import styles from '../styles/pages/List.module.css';
@@ -32,7 +30,6 @@ export default function List() {
         api.get('https://p3teufi0k9.execute-api.us-east-1.amazonaws.com/v1/pizza', {
         }).then(response => {
             setPizzas(response.data)
-            console.log(response)
         })
     },[])
     

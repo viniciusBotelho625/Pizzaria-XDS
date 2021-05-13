@@ -32,3 +32,15 @@
 .searchInput:focus {
     border: 2px solid var(--green);
 }
+
+@media(max-width: 600px) {
+    .searchWrapper {
+        margin: 20px 0px 0px 10px;
+    }
+}
+
+@media(max-width: 1300px) {
+    .searchWrapper {
+        margin: 20px 0px 0px 10px;
+    }
+}

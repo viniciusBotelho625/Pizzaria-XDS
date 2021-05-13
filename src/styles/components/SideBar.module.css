@@ -24,9 +24,9 @@
     }
 }
 
-@media(max-width: 1024px) {
+@media(max-width: 1200px) {
     .sideBar {
-        width: 100%;
+        width: 130%;
     }
 }
 
