@@ -1,12 +1,12 @@
 import React, { FormEvent, useState, useContext } from 'react';
-import { Redirect, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import Cookies from 'js-cookie';
 
 import styles from '../styles/pages/Login.module.css';
 import logoImg from '../assets/logo.png';
 import  api  from '../services/api';
 
-// import AuthContext from '../context/AuthContext';
+
 
 export default function Logon(){
     const history = useHistory();
@@ -14,7 +14,6 @@ export default function Logon(){
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    // const { authToken, setAuthToken }= useContext(AuthContext);
     
     async function handleLogin (e: FormEvent) {
         e.preventDefault();
@@ -24,14 +23,14 @@ export default function Logon(){
                 email,
                 password
         }).then(resp => {
-            // setAuthToken(authToken);
-            // Cookies.set('token', authToken);
+            const { accessToken } = resp.data;
+            Cookies.set("access", accessToken);
             history.push('/list')
         })
         } catch (err) {
             alert("Erro de autenticação")
         }
-        // if (authToken) return <Redirect to="/" />
+        
     } 
 
     return (

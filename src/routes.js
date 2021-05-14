@@ -6,12 +6,11 @@ import Logon from './pages/login';
 import Detail from './pages/detail';
 import Success from './pages/success';
 import NotFound from './pages/notFound';
-// import ProtectedRoutes from './pages/ProtectedRoutes';
-// import { AuthProvider} from './context/AuthContext';
+
 
 
 const Routes = () => (
-    // <AuthProvider>
+    
     <BrowserRouter>
         <Switch>
             <Route path="/" exact component={Logon}/>
@@ -21,7 +20,7 @@ const Routes = () => (
             <Route path="*" component={NotFound}/>
         </Switch>
     </BrowserRouter>
-    // {/* </AuthProvider> */}
+  
 );
 
 

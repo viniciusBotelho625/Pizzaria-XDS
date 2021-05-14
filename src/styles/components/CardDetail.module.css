@@ -99,8 +99,8 @@ p {
     cursor: pointer;
 }
 
-.cardDetailInformation .orderOptionsSize .selected {
-    background-color: var(--green) !important;
+.cardDetailInformation .orderOptionsSize button:hover{
+    background-color: var(--green);
     transition: 0.3s !important;
     color: var(--white) !important;
 }
