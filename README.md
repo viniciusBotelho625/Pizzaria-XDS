@@ -41,17 +41,26 @@
 
 <h3>Sobre o projeto 🚀</h3>
 <p>O XDS é um desafio Front-end que tem como base utilizar o framework React.JS para sua construção. O objetivo é construir um site de Pizzaria, onde você pode selecionar de forma rápida e prática o seu pedido no conforto de sua residência.</p>
+
+<h3>Próxima Release 🛠</h3>
+<ul>
+  <li><p>Autenticação nas rotas internas da aplicação</p></li>
+  <li><p>Implementar SnackBar para tratar as mensagens para o usuário</p></li>
+</ul>
 <br></br>
+<h3>Wireframe 🎨</h3>
+
 <p align="center"> 
   <img src="https://github.com/viniciusBotelho625/Pizzaria-XDS/blob/main/img_README/Login.png" width="48%">
   <img src="https://github.com/viniciusBotelho625/Pizzaria-XDS/blob/main/img_README/List.png" width="48%">
   <img src="https://github.com/viniciusBotelho625/Pizzaria-XDS/blob/main/img_README/Detail.png" width="48%">
   <img src="https://github.com/viniciusBotelho625/Pizzaria-XDS/blob/main/img_README/Success.png" width="48%">
 </p>
+
 <h3>Como contribuir 😎</h3>
 <ul>
   <li>Faça um Fork desse repositório;</li>
-  <li>Cria uma branch com a sua feature: git checkout -b minha-feature;</li> 
+  <li>Crie uma branch com a sua feature: git checkout -b minha-feature;</li> 
   <li>Faça commit das suas alterações: git commit -m 'feat: Minha nova feature';</li>
   <li>Faça push para a sua branch: git push origin minha-feature.</li>
   <li>Depois que o merge da sua pull request for feito, você pode deletar a sua branch.</li>
